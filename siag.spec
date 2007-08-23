@@ -139,51 +139,78 @@ rm -fr %buildroot
 install -d -m 0755 %buildroot/%_docdir/%name-%version
 mv %buildroot/%_prefix/doc/%name/* %buildroot/%_docdir/%name-%version/
 
+mkdir -p $RPM_BUILD_ROOT/%{_datadir}/applications/
  
-install -d -m 0755 %buildroot/%_menudir
-cat > %buildroot/%_menudir/xsiag <<EOF
-?package(xsiag): \
-command="siag" \
-title="Siag" \
-longtitle="Siag Office spreadsheet" \
-needs="x11" \
-section="Office/Spreadsheets" \
-icon="siag_spreadsheet.png"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-xsiag.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Siag Office spreadsheet
+Comment=Siag Office spreadsheet
+Exec=siag
+Icon=siag_spreadsheet.png
+Terminal=false
+Type=Application
+Categories=Office;Spreadsheet;Science;Math;X-MandrivaLinux-Office-Spreadsheets;
 EOF
 
-cat > %buildroot/%_menudir/pw <<EOF
-?package(pw): \
-command="pw" \
-title="Pathetic Writer" \
-longtitle="Siag Office Pathetic writer" \
-needs="x11" \
-section="Office/Wordprocessors" \
-icon="siag_wordprocessor.png"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-pw.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Pathetic Writer
+Comment=Siag Office Pathetic writer
+Exec=pw
+Icon=siag_wordprocessor.png
+Terminal=false
+Type=Application
+Categories=Office;WordProcessor;X-MandrivaLinux-Office-Wordprocessor;
 EOF
 
-cat > %buildroot/%_menudir/siag-common<<EOF
-?package(siag-common): \
-command="xfiler" title="Xfiler" longtitle="Siag File manager" \
-needs="x11" section="Applications/File Tools" icon="siag_file_tools.png"
-
-?package(siag-common): \
-command="xedplus" title="Xedplus" longtitle="Siag text editor" \
-needs="x11" section="Applications/Editors" icon="siag_editors.png"
-
-?package(siag-common): \
-command="gvu" title="Gvu" longtitle="Siag Postscript viewer" \
-needs="x11" section="Applications/Publishing" icon="siag_publishing.png"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-xfiler.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Xfiler
+Comment=Siag File manager
+Exec=xfiler
+Icon=siag_file_tools
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-System-FileTools
 EOF
 
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-xedplus.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Xedplus
+Comment=Siag text editor
+Exec=xedplus
+Icon=siag_editors
+Terminal=false
+Type=Application
+Categories=Office;WordProcessor;X-MandrivaLinux-Office-Wordprocessor;
+EOF
 
-cat > %buildroot/%_menudir/egon <<EOF
-?package(egon): \
-command="egon" \
-title="Egon" \
-longtitle="Siag Office Egon Animator" \
-needs="x11" \
-section="Office/Presentations" \
-icon="siag_publishing3.png"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-gvu.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gvu
+Comment=Siag Postscript viewer
+Exec=xedplus
+Icon=siag_publishing
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-Office-Publishing;Office;Viewer;processor;
+EOF
+
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-egon.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Egon
+Comment=Siag Office Egon Animator
+Exec=egon
+Icon=siag_publishing3.png
+Terminal=false
+Type=Application
+Categories=Qt;KDE;Office;X-MandrivaLinux-Office-Publishing
 EOF
 
 
@@ -237,7 +264,9 @@ rm -fr %buildroot
 %_bindir/xfiler
 %_libdir/*/*/* 
 %_datadir/%name
-%_menudir/siag-common
+%{_datadir}/applications/mandriva-gvu.desktop
+%{_datadir}/applications/mandriva-xedplus.desktop
+%{_datadir}/applications/mandriva-xfiler.desktop
 %_iconsdir/siag_editors.png
 %_miconsdir/siag_editors.png
 %_liconsdir/siag_editors.png
@@ -253,7 +282,7 @@ rm -fr %buildroot
 %files -n xsiag
 %defattr (-,root,root)
 %doc COPYING siag/docs/ siag/examples/
-%_menudir/xsiag
+%{_datadir}/applications/mandriva-xsiag.desktop
 %_bindir/siag
 %_mandir/man1/siag.*
 %_iconsdir/siag_spreadsheet.png
@@ -263,7 +292,7 @@ rm -fr %buildroot
 %files -n egon
 %defattr (-,root,root)
 %doc COPYING egon/docs/ egon/examples/ 
-%_menudir/egon
+%{_datadir}/applications/mandriva-egon.desktop
 %_bindir/egon
 %_datadir/%name/egon/*
 %_mandir/man1/egon.*
@@ -282,7 +311,7 @@ rm -fr %buildroot
 %files -n pw
 %defattr (-,root,root)
 %doc COPYING pw/docs/ pw/examples/ 
-%_menudir/pw
+%{_datadir}/applications/mandriva-pw.desktop
 %_bindir/pw
 %_mandir/man1/pw.*
 %_iconsdir/siag_wordprocessor.png
