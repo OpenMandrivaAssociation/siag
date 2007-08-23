@@ -8,6 +8,7 @@ Group:		Office
 
 Source:		%name-%version.tar.bz2
 Source1:	siag_icons.tar.bz2 
+Patch0:		siag-fix-compil.patch
 
 BuildRoot:	%_tmppath/%name-%version-%release-root
 BuildRequires: libMowitz-devel >= 0.3.0 
@@ -122,6 +123,7 @@ an X11 version in the `siag' package.
 %prep
 
 %setup -q
+%patch0 -p0
  
 %build 
  
