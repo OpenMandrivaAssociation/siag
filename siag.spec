@@ -143,7 +143,6 @@ mkdir -p $RPM_BUILD_ROOT/%{_datadir}/applications/
  
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-xsiag.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Name=Siag Office spreadsheet
 Comment=Siag Office spreadsheet
 Exec=siag
@@ -155,7 +154,6 @@ EOF
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-pw.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Name=Pathetic Writer
 Comment=Siag Office Pathetic writer
 Exec=pw
@@ -167,7 +165,6 @@ EOF
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-xfiler.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Name=Xfiler
 Comment=Siag File manager
 Exec=xfiler
@@ -179,7 +176,6 @@ EOF
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-xedplus.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Name=Xedplus
 Comment=Siag text editor
 Exec=xedplus
@@ -191,7 +187,6 @@ EOF
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-gvu.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Name=Gvu
 Comment=Siag Postscript viewer
 Exec=xedplus
@@ -203,7 +198,6 @@ EOF
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-egon.desktop
 [Desktop Entry]
-Encoding=UTF-8
 Name=Egon
 Comment=Siag Office Egon Animator
 Exec=egon
