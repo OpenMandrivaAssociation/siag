@@ -171,7 +171,7 @@ Exec=xfiler
 Icon=siag_file_tools
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-System-FileTools
+Categories=X-MandrivaLinux-System-FileTools;
 EOF
 
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-xedplus.desktop
@@ -204,7 +204,7 @@ Exec=egon
 Icon=siag_publishing3.png
 Terminal=false
 Type=Application
-Categories=Qt;KDE;Office;X-MandrivaLinux-Office-Publishing
+Categories=Qt;KDE;Office;X-MandrivaLinux-Office-Publishing;
 EOF
 
 
