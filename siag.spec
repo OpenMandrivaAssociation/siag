@@ -146,7 +146,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-xsiag.desktop
 Name=Siag Office spreadsheet
 Comment=Siag Office spreadsheet
 Exec=siag
-Icon=siag_spreadsheet.png
+Icon=siag_spreadsheet
 Terminal=false
 Type=Application
 Categories=Office;Spreadsheet;Science;Math;X-MandrivaLinux-Office-Spreadsheets;
@@ -157,7 +157,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-pw.desktop
 Name=Pathetic Writer
 Comment=Siag Office Pathetic writer
 Exec=pw
-Icon=siag_wordprocessor.png
+Icon=siag_wordprocessor
 Terminal=false
 Type=Application
 Categories=Office;WordProcessor;X-MandrivaLinux-Office-Wordprocessor;
@@ -201,7 +201,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-egon.desktop
 Name=Egon
 Comment=Siag Office Egon Animator
 Exec=egon
-Icon=siag_publishing3.png
+Icon=siag_publishing3
 Terminal=false
 Type=Application
 Categories=Qt;KDE;Office;X-MandrivaLinux-Office-Publishing;
