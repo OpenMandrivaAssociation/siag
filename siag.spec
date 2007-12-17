@@ -10,7 +10,6 @@ Source:		%name-%version.tar.bz2
 Source1:	siag_icons.tar.bz2 
 Patch0:		siag-fix-compil.patch
 
-BuildRoot:	%_tmppath/%name-%version-%release-root
 BuildRequires: libMowitz-devel >= 0.3.0 
 BuildRequires: libneXtaw-devel libxpm-devel
 BuildRequires: libncurses-devel tcl python libgdbm-devel
