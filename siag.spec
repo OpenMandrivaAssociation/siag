@@ -5,6 +5,7 @@ Release:	%mkrel 1
 License:	GPL
 URL:		http://siag.nu/
 Group:		Office
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Source:		%name-%version.tar.bz2
 Source1:	siag_icons.tar.bz2 
