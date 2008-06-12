@@ -216,29 +216,45 @@ cd $RPM_BUILD_ROOT%_iconsdir
 for i in  */ ./;do cp $i/siag_publishing.png $i/siag_publishing2.png;done
 for i in  */ ./;do cp $i/siag_publishing.png $i/siag_publishing3.png;done
  
+%if %mdkversion < 200900
 %post common
 %update_menus
+%endif
  
+%if %mdkversion < 200900
 %postun common
 %clean_menus
+%endif
  
+%if %mdkversion < 200900
 %post -n xsiag
 %update_menus
+%endif
  
+%if %mdkversion < 200900
 %postun -n xsiag
 %clean_menus
+%endif
  
+%if %mdkversion < 200900
 %post -n pw
 %update_menus
+%endif
  
+%if %mdkversion < 200900
 %postun -n pw
 %clean_menus
+%endif
  
+%if %mdkversion < 200900
 %post -n egon
 %update_menus
+%endif
  
+%if %mdkversion < 200900
 %postun -n egon
 %clean_menus
+%endif
 
 %clean
 rm -fr %buildroot
