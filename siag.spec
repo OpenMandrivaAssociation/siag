@@ -1,7 +1,7 @@
 Summary:	An office suite
 Name:		siag
 Version:	3.6.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 URL:		http://siag.nu/
 Group:		Office
