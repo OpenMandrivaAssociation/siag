@@ -3,7 +3,7 @@ Name:		siag
 Version:	3.6.1
 Release:	%mkrel 5
 License:	GPL
-URL:		http://siag.nu/
+URL:		https://siag.nu/
 Group:		Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
